@@ -2,7 +2,7 @@ import streamlit as st
 import os
 import openai
 
-openai.api_key = ""     
+openai.api_key = "sdcscsdcdcs"     
 
 
 engine_dis={'danici':'''Davinci is the most capable engine and can perform any task the other models can perform and often with less instruction. For applications requiring a lot of understanding of the content, like summarization for a specific audience and content creative generation, Davinci is going to produce the best results. The trade-off with Davinci is that it costs more to use per API call and other engines are faster.\nAnother area where Davinci shines is in understanding the intent of text. Davinci is quite good at solving many kinds of logic problems and explaining the motives of characters. Davinci has been able to solve some of the most challenging AI problems involving cause and effect.''',
