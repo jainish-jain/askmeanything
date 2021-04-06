@@ -2,6 +2,10 @@ import streamlit as st
 import os
 import openai
 import time 
+from bokeh.models.widgets import Div
+
+
+st.set_page_config(page_title="AskMeThing")
 openai.api_key = "sk-dU2Z37bDXu8RVccmlChD2PxcB2xqbzO7cjFBPCwy"     
 @st.cache(allow_output_mutation=True)
 def get_mutable():
@@ -23,7 +27,21 @@ st.sidebar.subheader("Advance Options:")
 se=st.sidebar.selectbox("Select Engine", options=list(engine_dis))
 st.sidebar.info(engine_dis[se])
 t=st.sidebar.slider("Max Tokens",min_value=1,value=100,max_value=250)
-st.sidebar.write("\n\n"*3)
+st.sidebar.write("\n\n"*5)
+
+# st.sidebar.text("\n\n\n")
+if st.sidebar.button('Github'):
+    #js = "window.open('https://github.com/jainish-jain')"  # New tab or window
+    js = "window.location.href = 'https://github.com/jainish-jain'"  # Current tab
+    html = '<img src onerror="{}">'.format(js)
+    div = Div(text=html)
+    st.bokeh_chart(div)
+if st.sidebar.button('LinkedIn'):
+    #js = "window.open('https://github.com/jainish-jain')"  # New tab or window
+    js = "window.location.href = 'https://www.linkedin.com/in/jainish-jain/'"  # Current tab
+    html = '<img src onerror="{}">'.format(js)
+    div = Div(text=html)
+    st.bokeh_chart(div)
 if st.sidebar.button("Balloons"):
     st.balloons()
 prompt_input=st.text_input("") 
@@ -31,6 +49,7 @@ prompt_input=st.text_input("")
 #     engine_input=st.selectbox("Engine",['ada','babbage','curie','davinci'])
 
 # st.text(prompt_input)
+st.text("\n")
 if st.button("Run"):
     response = openai.Completion.create(
         engine=se ,
