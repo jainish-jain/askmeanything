@@ -6,7 +6,7 @@ from bokeh.models.widgets import Div
 
 
 st.set_page_config(page_title="AskMeThing")
-openai.api_key = "sk-dU2Z37bDXu8RVccmlChD2PxcB2xqbzO7cjFBPCwy"     
+openai.api_key = "api key"     
 @st.cache(allow_output_mutation=True)
 def get_mutable():
     return []
